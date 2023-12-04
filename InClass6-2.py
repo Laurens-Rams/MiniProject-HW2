@@ -16,6 +16,7 @@ print(arr[2][0])
 print(arr[3][0])
 print(arr[4][0])
 
+
 # convert to grayscale using for loops
 for i in range(0, 16): # column number from 0 to 15
     for j in range(0, 16): # row number from 0 to 15
