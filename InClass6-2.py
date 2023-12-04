@@ -18,11 +18,11 @@ class Filter():
 
 class GrayScaleFilter(Filter):
     def transform(self):
-        for i in range(0, 16):  # column number from 0 to 15
-            for j in range(0, 16):  # row number from 0 to 15
-                r, g, b = self.arr[i][j]  # get rgb values for the pixel
-                avg = r / 3 + g / 3 + b / 3  # calculate average
-                self.arr[i][j] = [avg, avg, avg]  # set rgb values to average
+        for i in range(len(self.arr)):
+            for j in range(len(self.arr[i])):
+                r, g, b = self.arr[i][j]
+                avg = r / 3 + g / 3 + b / 3
+                self.arr[i][j] = [avg, avg, avg]
 
 class FunnyFilter(Filter):
     def transform(self):
@@ -34,7 +34,7 @@ class FunnyFilter(Filter):
 pygame.init()
 screen = pygame.display.set_mode((1200, 400))
 
-image_file = "data/test_cut.png"
+image_file = "data/test_new.png"
 gray_filter = GrayScaleFilter(image_file)
 funny_filter = FunnyFilter(image_file)
 
